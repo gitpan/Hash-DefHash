@@ -1,0 +1,7 @@
+Revision history for Hash-DefHash
+
+0.01    2012-09-14 (SHARYANTO)
+
+        First version. Most methods have been implemented except
+        get_prop_all_langs() and set_prop_lang().
+
