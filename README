@@ -2,7 +2,7 @@ NAME
     Hash::DefHash - Manipulate defhash
 
 VERSION
-    version 0.01
+    version 0.02
 
 SYNOPSIS
      use Hash::DefHash; # imports defhash()
@@ -90,6 +90,12 @@ SYNOPSIS
      # set value for alternative language
      $oldpropval = $dh->set_prop_lang($prop, $lang, $propval);
 
+FUNCTIONS
+  defhash([ $hash ]) => OBJ
+    Shortcut for "Hash::DefHash->new($hash)". As a bonus, can also detect if
+    $hash is already a defhash and returns it immediately instead of
+    wrapping it again. Exported by default.
+
 METHODS
   new([ $hash ],[ %opts ]) => OBJ
     Create a new Hash::DefHash object, which is a thin OO skin over the
@@ -142,12 +148,6 @@ METHODS
   $dh->set_prop_lang
 SEE ALSO
     DefHash specification
-
-DESCRIPTION
-    This module has Rinci metadata.
-
-FUNCTIONS
-    None are exported by default, but they are exportable.
 
 AUTHOR
     Steven Haryanto <stevenharyanto@gmail.com>
