@@ -19,13 +19,13 @@ my %module_build_args = (
     "Steven Haryanto <stevenharyanto\@gmail.com>"
   ],
   "dist_name" => "Hash-DefHash",
-  "dist_version" => "0.02",
+  "dist_version" => "0.03",
   "license" => "perl",
   "module_name" => "Hash::DefHash",
   "recommends" => {},
   "recursive_test_files" => 1,
   "requires" => {
-    "DefHash" => 1,
+    "DefHash" => "v1.0.2",
     "SHARYANTO::String::Util" => 0,
     "perl" => "5.010000"
   },

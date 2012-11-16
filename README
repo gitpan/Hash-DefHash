@@ -2,7 +2,7 @@ NAME
     Hash::DefHash - Manipulate defhash
 
 VERSION
-    version 0.02
+    version 0.03
 
 SYNOPSIS
      use Hash::DefHash; # imports defhash()
@@ -121,6 +121,7 @@ METHODS
   $dh->hash
   $dh->check
   $dh->contents
+  $dh->default_lang
   $dh->props
   $dh->prop
   $dh->get_prop
@@ -136,7 +137,7 @@ METHODS
   $dh->add_attr
   $dh->set_attr
   $dh->del_attr
-  $dh->del_all_attr
+  $dh->del_all_attrs
   $dh->defhash_v
   $dh->v
   $dh->name

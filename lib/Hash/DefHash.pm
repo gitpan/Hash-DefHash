@@ -10,7 +10,7 @@ use SHARYANTO::String::Util qw(trim_blank_lines);
 use Exporter qw(import);
 our @EXPORT = qw(defhash);
 
-our $VERSION = '0.02'; # VERSION
+our $VERSION = '0.03'; # VERSION
 
 our $re_prop = qr/\A[A-Za-z][A-Za-z0-9_]*\z/;
 our $re_attr = qr/\A[A-Za-z][A-Za-z0-9_]*(?:\.[A-Za-z][A-Za-z0-9_]*)*\z/;
@@ -336,7 +336,9 @@ sub default_lang {
     if ($self->{parent}) {
         $par = $self->{parent}->default_lang;
     }
-    $self->get_prop('default_lang') // $par // "en_US";
+    my $res = $self->get_prop('default_lang') // $par // $ENV{LANG} // "en_US";
+    $res = "en_US" if $res eq "C";
+    $res;
 }
 
 sub name {
@@ -411,7 +413,7 @@ Hash::DefHash - Manipulate defhash
 
 =head1 VERSION
 
-version 0.02
+version 0.03
 
 =head1 SYNOPSIS
 
@@ -541,6 +543,8 @@ unset in the current hash.
 
 =head2 $dh->contents
 
+=head2 $dh->default_lang
+
 =head2 $dh->props
 
 =head2 $dh->prop
@@ -571,7 +575,7 @@ unset in the current hash.
 
 =head2 $dh->del_attr
 
-=head2 $dh->del_all_attr
+=head2 $dh->del_all_attrs
 
 =head2 $dh->defhash_v
 
