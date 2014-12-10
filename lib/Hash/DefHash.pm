@@ -1,16 +1,17 @@
 package Hash::DefHash;
 
-use 5.010;
+our $DATE = '2014-12-10'; # DATE
+our $VERSION = '0.04'; # VERSION
+
+use 5.010001;
 use strict;
 use warnings;
 
 use Scalar::Util qw(blessed);
-use SHARYANTO::String::Util qw(trim_blank_lines);
+use String::Trim::More qw(trim_blank_lines);
 
 use Exporter qw(import);
 our @EXPORT = qw(defhash);
-
-our $VERSION = '0.03'; # VERSION
 
 our $re_prop = qr/\A[A-Za-z][A-Za-z0-9_]*\z/;
 our $re_attr = qr/\A[A-Za-z][A-Za-z0-9_]*(?:\.[A-Za-z][A-Za-z0-9_]*)*\z/;
@@ -403,9 +404,11 @@ sub set_prop_lang {
 1;
 # ABSTRACT: Manipulate defhash
 
-
 __END__
+
 =pod
+
+=encoding UTF-8
 
 =head1 NAME
 
@@ -413,7 +416,7 @@ Hash::DefHash - Manipulate defhash
 
 =head1 VERSION
 
-version 0.03
+This document describes version 0.04 of Hash::DefHash (from Perl distribution Hash-DefHash), released on 2014-12-10.
 
 =head1 SYNOPSIS
 
@@ -599,16 +602,31 @@ unset in the current hash.
 
 L<DefHash> specification
 
+=head1 HOMEPAGE
+
+Please visit the project's homepage at L<https://metacpan.org/release/Hash-DefHash>.
+
+=head1 SOURCE
+
+Source repository is at L<https://github.com/perlancar/perl-Hash-DefHash>.
+
+=head1 BUGS
+
+Please report any bugs or feature requests on the bugtracker website L<https://rt.cpan.org/Public/Dist/Display.html?Name=Hash-DefHash>
+
+When submitting a bug or request, please include a test-file or a
+patch to an existing test-file that illustrates the bug or desired
+feature.
+
 =head1 AUTHOR
 
-Steven Haryanto <stevenharyanto@gmail.com>
+perlancar <perlancar@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2012 by Steven Haryanto.
+This software is copyright (c) 2014 by perlancar@cpan.org.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
 
 =cut
-
